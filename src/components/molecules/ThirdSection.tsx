@@ -55,9 +55,9 @@ const ThirdSection = () => {
 
     return (
         <>
-          <div className=" w-full flex items-center justify-between p-6 font-bol bg-[#FED9B7]">
-            <div className="w-full p-8 bg-slate-600">
-              <div className="program-unggulan p-8 bg-slate-400">
+          <div className=" w-full flex items-center justify-between p-6 font-bol bg-[#F5F5F5]">
+            <div className="w-full p-8 ">
+              <div className="">
                 <div className="flex-row justify-center items-center text-center ">
                   <h1 className="text-[#F07167]">Program Unggulan</h1>
                   <p className="text-black">Program unggulan untuk mencapai misi kami.</p>
@@ -84,12 +84,12 @@ const ThirdSection = () => {
                   </ul>
                 </div>
                 
-                <div className="flex mt-16 justify-center ">
-                  <Button action={(e) => {alert('Triggered')}} title="Lihat Program Selengkapnya" buttonColor="bg-[#FFFFFF]"/>
+                <div className="flex mt-16 justify-center">
+                  <Button action={(e) => {alert('Triggered')}} title="Lihat Program Selengkapnya" buttonColor="bg-[#F5F5F5]"/>
                 </div>
               </div>
 
-              <div className="flex flex-col p-8 bg-gray-700 ">
+              <div className="flex flex-col p-8">
                 <h1 className="flex mb-8">Follow Us!</h1>
                 <ul className="flex flex-wrap justify-between gap-8 rounded">
                 {/* {listImage.map((Images, index) => {

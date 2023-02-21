@@ -25,7 +25,7 @@ export const FirstSectionField: FC<TFirstSection> = ({ id, url, titles, descript
     // console.log(prop)
     return (
         <>
-            <div className="flex w-full bg-[#FED9B7] justify-between items-center ">
+            <div className="flex w-full bg-[#F5F5F5] justify-between items-center ">
                 <div className="w-5/6 p-14">
                     <h1 className="mb-7">Hai Anak Muda Indonesia</h1>
                     <p className="mb-7">Selamat datang di Ketjil Bergerak! Kami adalah organisasi nirlaba yang didirikan pada 2006 dan berbasis di Yogyakarta, Indonesia.</p>
