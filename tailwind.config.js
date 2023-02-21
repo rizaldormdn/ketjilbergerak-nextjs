@@ -18,7 +18,14 @@ module.exports = {
 		// 	gray: "#8492a6",
 		// 	"gray-light": "#d3dce6",
 		// },
-		extend: {},
+		extend: {
+			backgroundImage: {
+				bg1:'url("https://i.scdn.co/image/ab67616d00001e02cb40a585d3c5a53b3d84ef44")',
+				bg2:'url("/public/static/images/KB2.png")',
+				bg3:'url("/public/static/images/KB3.png")',
+				bg4:'url("/public/static/images/KB4.png")',				
+			}
+		},
 	},
 	plugins: [],
 };

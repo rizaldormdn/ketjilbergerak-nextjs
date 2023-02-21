@@ -16,9 +16,13 @@
 }
 
 .hyperlink {
-  @apply block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4
+  @apply block mt-4 lg:inline-block lg:mt-0 text-black hover:text-[#F07167] mr-4
 }
 
 .popup {
-  @apply transition ease-in-out delay-150 bg-violet-600 hover:-translate-y-1 hover:scale-110 hover:bg-violet-700 duration-300
+  @apply transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300
+}
+
+.card-1{
+ @apply max-w-xs rounded overflow-hidden shadow-lg
 }
