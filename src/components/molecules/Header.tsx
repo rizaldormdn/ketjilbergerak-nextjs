@@ -7,7 +7,6 @@ type props = {
     title?: string;
     url?: string;
     required: boolean
-
 };
 
 const Header = ({ title, url }: props) => {
@@ -16,12 +15,11 @@ const Header = ({ title, url }: props) => {
         email: "envkt@example.com",
         password: "password",
         role: "admin",
-
     };
 
     return (
         <>
-        <nav className="w-full p-6  ">
+        <nav className="w-full p-6 bg-[#FFFFFF]">
             <div className="flex w-full justify-between items-center ">
                 <div className="flex justify-center">
                     <Link className="flex w-40 mx-7" href="/">
@@ -46,10 +44,11 @@ const Header = ({ title, url }: props) => {
                 </div>
                 <div className="">
                     <ul className="flex gap-2 mx-7">
-                        <Link className="hyperlink hovers" href="/home">Home</Link>
+                        <Link className="hyperlink hovers" href="/">Home</Link>
                         <Link className="hyperlink hovers" href="/program">Program</Link>
+                        <Link className="hyperlink hovers" href="/about">About</Link>
                         <Link className="hyperlink hovers" href="/contact">Contact</Link>
-                        <Link className="hyperlink hovers" href="/donate">Donate</Link>
+                        <Link className="hyperlink hovers" href="/donate">Merch</Link>
                     </ul>
                 </div>
             </div>
