@@ -1,11 +1,26 @@
-const MobileMenu = () => {
-  return (
-    <div className="block lg:hidden">
-      <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-        <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-      </button>
-    </div>
-  );
-}
+import DehazeIcon from '@mui/icons-material/Dehaze';
+import Link from "next/link";
+import { useState } from "react";
 
+const MobileMenu = () => {
+  const [menu, setMenu] = useState(false)
+  return (
+    <>
+      <div>
+        <DehazeIcon fontSize='large' className='md:hidden' onClick={() => { setMenu(!menu) }} />
+      </div>
+      {menu && (
+        <div className='absolute top-[4rem] left-[0] bg-white w-full rounded-b-xl min-h-full'>
+          <ul className="p-1 flex flex-col items-center justify-center">
+            <Link className="block hyperlink hovers p-3" href="/">Home</Link>
+            <Link className='block hyperlink hovers p-3' href='program'>Program</Link>
+            <Link className="block hyperlink hovers p-3" href="/about">About</Link>
+            <Link className="block hyperlink hovers p-3" href="/contact">Contact</Link>
+            <Link className="block hyperlink hovers p-3" href="/merch">Merch</Link>
+          </ul>
+        </div>
+      )}
+    </>
+  )
+}
 export default MobileMenu;
