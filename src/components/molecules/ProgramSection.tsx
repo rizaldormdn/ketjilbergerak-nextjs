@@ -32,7 +32,7 @@ export const ProgramSection = () => {
             {program.map((list, index) => (
                 <div key={list.title} className={`p-2 py-8 text-white md:flex gap-10 justify-evenly items-center mx-auto flex-wrap ${index === 1 || index === 3 ? "md:flex-row-reverse" : ""}`}>
                     <div>
-                        <Image src={kb4} width={500} height={500} alt='' className="" />
+                        <Image src={kb4} width={450} height={500} alt='' className="" />
                     </div>
                     <div>
                         <h1 className="mt-2 text-[#F07167] text-2xl md:text-4xl">{list.title}</h1>

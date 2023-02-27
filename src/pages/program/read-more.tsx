@@ -42,7 +42,7 @@ const ReadMore = () => {
           <div className="flex items-center gap-2 text-cyan-700">
             <p className="text-xs md:text-base">Article Ilmiah</p>
             <ArrowForwardIosIcon className="text-sm" />
-          </div>
+          </div>  
           <div>
             <p className="text-xs md:text-base">Sekolah Pemuda Desa</p>
           </div>
@@ -69,11 +69,7 @@ const ReadMore = () => {
           <h2 className="font-bold py-3 text-3xl text-start w-full">Lihat Juga</h2>
         </div>
         <div className="md:flex flex items-center justify-center gap-5 md:justify-between flex-wrap md:gap-5">
-          {listContent.map((list) => (
-            <div key={list.title}>
-              <CardContent title={list.title} desc={list.desc} />
-            </div>
-          ))}
+          <CardContent />
         </div>
       </div>
       <Footer />
