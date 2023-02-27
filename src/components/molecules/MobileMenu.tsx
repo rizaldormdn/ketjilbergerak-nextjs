@@ -3,8 +3,6 @@ import Link from "next/link";
 import { useState } from "react";
 
 const MobileMenu = () => {
-
-  const [open, setOpen] = useState(false)
   const [menu, setMenu] = useState(false)
   return (
     <>

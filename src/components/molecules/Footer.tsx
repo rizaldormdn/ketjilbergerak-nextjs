@@ -1,30 +1,9 @@
 import Link from "next/link";
 import Button from "../atoms/Button";
+import { LinkFooter } from "./Link";
 import MediaSosial from "./MediaSosial";
 
-
-type props = {
-	title?: string;
-	url?: string
-};
-
-
 const Footer = () => {
-	const program = [
-		{ label: 'Sekolah Desa', href: '#' },
-		{ label: 'Video Production with BPIP', href: '#' },
-		{ label: 'Music', href: '#' },
-		{ label: 'Mural', href: '#' },
-		{ label: 'Anti Corruption Youth Camp', href: '#' },
-	]
-	const blog = [
-		{ label: 'About', href: '#' },
-		{ label: 'Contact Us', href: '#' },
-		{ label: 'Careers', href: '#' },
-		{ label: 'Culture', href: '#' },
-		{ label: 'Blog', href: '#' },
-	]
-
 	return (
 		<footer className="p-2 bg-[#FFFFFF] mt-10">
 			<div className="flex lg:justify-evenly flex-wrap items-center p-2">
@@ -52,22 +31,7 @@ const Footer = () => {
 				</div>
 
 				<div className="md:flex md:px-10 gap-10 mt-4">
-					<div className="mb-4">
-						<h2 className="font-bold text-[#F07167]">Product</h2>
-						<div className="flex flex-col mt-2">
-							{program.map(link => (
-								<Link key={link.label} className="hyperlink hovers" href={link.href}>{link.label}</Link>
-							))}
-						</div>
-					</div>
-					<div className="mb-4">
-						<h2 className="font-bold text-[#F07167]">Company</h2>
-						<div className="flex flex-col mt-2">
-							{blog.map(link => (
-								<Link key={link.label} className="hyperlink hovers" href={link.href}>{link.label}</Link>
-							))}
-						</div>
-					</div>
+					<LinkFooter />
 					<div className="text-white ml-[8rem]">
 						<Button action={(e) => { alert('Triggered') }} title="Donate Us!" buttonColor="bg-[#F07167]" />
 					</div>

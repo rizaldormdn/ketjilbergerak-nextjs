@@ -1,11 +1,7 @@
-import Link from "next/link";
+import { useRouter } from "next/router";
+import { ReactElement } from "react";
 import Button from "../atoms/Button";
 import CardContent from "../molecules/CardContent";
-import { ReactElement } from "react";
-import { validateHeaderValue } from "http";
-
-
-
 
 type props = {
   title?: string;
@@ -13,7 +9,6 @@ type props = {
   src?: ReactElement;
   styled?: string
 };
-
 
 const ThirdSection = () => {
   const listContent = [
@@ -33,6 +28,7 @@ const ThirdSection = () => {
       styled: "bg-bg3 no-repeat bg-cover text-xl "
     }
   ];
+  const router = useRouter()
   return (
     <>
       <div className=" w-full flex items-center justify-between p-6 font-bol bg-[#F5F5F5]">
@@ -50,7 +46,7 @@ const ThirdSection = () => {
               ))}
             </div>
             <div className="flex mt-16 justify-center">
-              <Button action={(e) => { alert('Triggered') }} title="Lihat Program Selengkapnya" buttonColor="bg-[#F5F5F5]" />
+              <Button action={(e) => { router.push('/program') }} title="Lihat Program Selengkapnya" buttonColor="bg-[#F5F5F5]" />
             </div>
           </div>
         </div>

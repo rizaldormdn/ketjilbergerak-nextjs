@@ -3,7 +3,7 @@ import React, { FC, ReactElement } from "react";
 import Image from "next/image";
 import Button from "../atoms/Button";
 import { useRouter } from "next/router";
-import kb1 from "/public/static/images/KB1.png"
+import kb1 from "../../assets/images/KB1.png"
 
 
 type TFirstSection = {

@@ -1,12 +1,12 @@
 import React from 'react'
 import Image from "next/image";
 
-import sos1 from "/public/static/images/Sosmed1.png"
-import sos2 from "/public/static/images/Sosmed2.png"
-import sos3 from "/public/static/images/Sosmed3.png"
-import sos4 from "/public/static/images/Sosmed4.png"
-import sos5 from "/public/static/images/Sosmed5.png"
-import sos6 from "/public/static/images/Sosmed6.png"
+import sos1 from "../../assets/images/Sosmed1.png"
+import sos2 from "../../assets/images/Sosmed2.png"
+import sos3 from "../../assets/images/Sosmed3.png"
+import sos4 from "../../assets/images/Sosmed4.png"
+import sos5 from "../../assets/images/Sosmed5.png"
+import sos6 from "../../assets/images/Sosmed6.png"
 import Link from 'next/link';
 
 export const Instagram = () => {
