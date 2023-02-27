@@ -13,7 +13,7 @@ const MobileMenu = () => {
         <div className='absolute top-[4rem] left-[0] bg-white w-full rounded-b-xl min-h-full'>
           <ul className="p-1 flex flex-col items-center justify-center">
             <Link className="block hyperlink hovers p-3" href="/">Home</Link>
-            <Link className='block hyperlink hovers p-3' href='program'>Program</Link>
+            <Link className='block hyperlink hovers p-3' href='/program'>Program</Link>
             <Link className="block hyperlink hovers p-3" href="/about">About</Link>
             <Link className="block hyperlink hovers p-3" href="/contact">Contact</Link>
             <Link className="block hyperlink hovers p-3" href="/merch">Merch</Link>

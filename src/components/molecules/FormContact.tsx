@@ -61,7 +61,7 @@ const FormContact = ({ formData, handleChange, handleSubmit }: props) => {
           onChange={handleChange}
           placeHolder={'Please type your message here...'}
         />
-        <Button action={(e) => { }} title="Send Message" buttonColor="bg-[#F07167]" textColor='text-white' style='ml-[0.5rem] mt-5'/>
+        <Button action={(e) => { }} title="Send Message" buttonColor="bg-[#F07167] md:ml-[0.5rem] ml-[8rem] mt-5 rounded-3xl " textColor='text-white' style=''/>
       </form>
     </div>
   )

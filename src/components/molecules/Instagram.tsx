@@ -13,8 +13,8 @@ export const Instagram = () => {
      return (
           <div>
                <div className="p-4 bg-[#F5F5F5]">
-                    <h1 className="mb-8 md:ml-[18rem] ml-[3.5rem] text-[#F07167] md:text-4xl">Follow Us!</h1>
-                    <div className="w-[70%] mx-auto gap-5 flex flex-wrap justify-between">
+                    <h1 className="mb-8 md:ml-[4rem] ml-[3.5rem] text-[#F07167] md:text-4xl">Follow Us!</h1>
+                    <div className="w-[70%] md:w-[90%] mx-auto gap-5 flex flex-wrap justify-between">
                          <Link href={'https://www.instagram.com/p/Ckp-L_oNKmC/?hl=id'}>
                               <Image className="rounded-lg"
                                    src={sos1}
@@ -24,7 +24,7 @@ export const Instagram = () => {
                                    alt="instagram1"
                               />
                          </Link>
-                         <Link href={'#'}>
+                         <Link href={'https://www.instagram.com/reel/CjDDHFGOJWL/?utm_source=ig_web_copy_link'}>
                               <Image className="rounded-lg"
                                    src={sos2}
                                    unoptimized
@@ -33,7 +33,7 @@ export const Instagram = () => {
                                    alt="instagram1"
                               />
                          </Link>
-                         <Link href={'#'}>
+                         <Link href={'https://www.instagram.com/p/CirzRSUPR9b/?utm_source=ig_web_copy_link'}>
                               <Image className="rounded-lg"
                                    src={sos3}
                                    unoptimized
@@ -42,7 +42,7 @@ export const Instagram = () => {
                                    alt="instagram1"
                               />
                          </Link>
-                         <Link href={'#'}>
+                         <Link href={'https://www.instagram.com/p/ChBlG8TvrQu/?utm_source=ig_web_copy_link'}>
                               <Image className="rounded-lg"
                                    src={sos4}
                                    unoptimized
@@ -51,7 +51,7 @@ export const Instagram = () => {
                                    alt="instagram1"
                               />
                          </Link>
-                         <Link href={'#'}>
+                         <Link href={'https://www.instagram.com/p/CgeNEKNvVwW/?utm_source=ig_web_copy_link'}>
                               <Image className="rounded-lg"
                                    src={sos5}
                                    unoptimized
@@ -60,7 +60,7 @@ export const Instagram = () => {
                                    alt="instagram1"
                               />
                          </Link>
-                         <Link href={'#'}>
+                         <Link href={'https://www.instagram.com/p/CbZmNrrLSxj/?utm_source=ig_web_copy_link'}>
                               <Image className="rounded-lg"
                                    src={sos6}
                                    unoptimized

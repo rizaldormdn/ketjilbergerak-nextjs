@@ -37,7 +37,7 @@ const TextArea = ({ name, value, label, placeHolder, onChange }: text) => {
           <div className='flex flex-col'>
                <label htmlFor={name} className='text-[#F07167] font-bold ml-3'>{label}</label>
                <textarea
-                    className='p-6 rounded-3xl mt-2 bg-gray-100'
+                    className='p-6 mx-2 rounded-3xl mt-2 bg-gray-100'
                     name={name}
                     value={value}
                     onChange={onChange}

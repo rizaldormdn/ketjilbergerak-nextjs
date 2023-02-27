@@ -18,9 +18,9 @@ export const AboutSecond: FC<AboutSecond> = ({ id, url, titles, description, ima
     return (
         <>
             <div className="bg-[#2C7284] justify-between items-center ">
-                <div className="p-4 md:ml-[18rem]">
+                <div className="p-4 md:w-2/6 md:ml-16">
                     <h1 className="mb-5 uppercase text-[#F07167] text-3xl">Support Our Mission</h1>
-                    <p className="mb-5">Mari dukung gerakan sosial kami untuk <br /> mewujudkan Visi dan Misi Ketjil Bergerak.</p>
+                    <p className="mb-5">Mari dukung gerakan sosial kami untuk mewujudkan Visi dan Misi Ketjil Bergerak.</p>
                     <Button action={(e) => { alert('Triggered') }} title="Donasi" buttonColor="bg-[#F07167]" textColor="text-white"/>
                 </div>
             </div>

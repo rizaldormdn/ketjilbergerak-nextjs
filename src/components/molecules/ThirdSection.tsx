@@ -11,23 +11,7 @@ type props = {
 };
 
 const ThirdSection = () => {
-  const listContent = [
-    {
-      title: "Dapoer Bergerak",
-      desc: "Lorem ipsum dolor sit amet consectet adipiscing elit eget quamumto.",
-      styled: "bg-bg1 no-repeat bg-cover text-xl"
-    },
-    {
-      title: "Pemuda Desa",
-      desc: "Lorem ipsum dolor sit amet consectet adipiscing elit eget quamumto.",
-      styled: "bg-bg2 no-repeat bg-cover text-xl"
-    },
-    {
-      title: "Company growth",
-      desc: "Lorem ipsum dolor sit amet consectet adipiscing elit eget quamumto.",
-      styled: "bg-bg3 no-repeat bg-cover text-xl "
-    }
-  ];
+  
   const router = useRouter()
   return (
     <>
@@ -39,11 +23,9 @@ const ThirdSection = () => {
               <p className="text-black">Program unggulan untuk mencapai misi kami.</p>
             </div>
             <div className="flex justify-evenly flex-wrap gap-5 mt-14">
-              {listContent.map((list) => (
-                <div key={list.title}>
-                  <CardContent title={list.title} desc={list.desc} />
-                </div>
-              ))}
+              
+                  <CardContent  />
+                
             </div>
             <div className="flex mt-16 justify-center">
               <Button action={(e) => { router.push('/program') }} title="Lihat Program Selengkapnya" buttonColor="bg-[#F5F5F5]" />
