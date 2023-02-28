@@ -11,12 +11,7 @@ const Index = () => {
           <BlankTemplate>
                <CommonSEO title="Program" description="" />
                <PrimaryNavigation />
-               <div className="p-2 md:p-8 bg-[#F5F5F5]">
-                    <h1 className="text-2xl md:text-4xl md:ml-6">Program</h1>
-                    <p className="md:ml-6">Berikut adalah program unggulan dari Ketjil Bergerak!</p>
-                    <ProgramSection/>
-               </div>
-               
+               <ProgramSection/>
                <Footer />
           </BlankTemplate>
      );
