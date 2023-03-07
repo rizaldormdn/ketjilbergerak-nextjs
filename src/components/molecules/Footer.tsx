@@ -6,8 +6,8 @@ import { Logo } from "../atoms/Logo";
 
 const Footer = () => {
 	return (
-		<footer className="p-2 bg-[#FFFFFF] md:mt-5">
-			<div className="flex lg:justify-evenly flex-wrap items-center p-5 md:ml-5 ">
+		<footer className="p-2 bg-[#FFFFFF] md:mt-2">
+			<div className="flex lg:justify-evenly flex-wrap items-center p-5 md:ml-5 md:mb-12">
 				<div className="">
 					<Logo />
 					<p className="">Siapa saja yang muda, kreatif, <br />berani dan berdikari adalah <span><a href="https://www.instagram.com/explore/tags/ketjilbergerak/" className="hover:underline hover:text-[#FF597B] text-[#F07167]">#ketjilbergerak</a></span><br /> Indonesia</p>

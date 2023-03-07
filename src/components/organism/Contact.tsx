@@ -26,7 +26,7 @@ const Contact = () => {
                     <div>
                          <Image src={kb} width={600} height={1104} alt='' />
                     </div>
-                    <div className='px-10 mt-10'>
+                    <div className='px-10 mt-10 '>
                          <h1 className=' font-bold text-5xl text-[#F07167]'>Get in touch today</h1>
                          <p className='text-gray-300 mt-5 ml-1'>keep in touch with us!</p>
                          <div className='mt-10'>

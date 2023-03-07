@@ -18,8 +18,8 @@ const FormContact = ({ formData, handleChange, handleSubmit }: props) => {
   return (
     <div>
       <form action="" onSubmit={handleSubmit}>
-        <div className='flex'>
-          <InputField
+        <div className='flex '>
+          <InputField style='px-4'
             name='name'
             type='text'
             value={formData.name}
@@ -27,7 +27,7 @@ const FormContact = ({ formData, handleChange, handleSubmit }: props) => {
             label="Name"
             placeHolder={'Jhon Doe'}
           />
-          <InputField
+          <InputField style='px-4'
             name='email'
             type='text'
             value={formData.email}
@@ -37,7 +37,7 @@ const FormContact = ({ formData, handleChange, handleSubmit }: props) => {
           />
         </div>
         <div className='flex'>
-          <InputField
+          <InputField style='px-4'
             name='phone'
             type='number'
             value={formData.phone}
@@ -45,7 +45,7 @@ const FormContact = ({ formData, handleChange, handleSubmit }: props) => {
             label="Phone"
             placeHolder={'081223456712'}
           />
-          <InputField
+          <InputField style='px-4'
             name='company'
             type='text'
             value={formData.company}
