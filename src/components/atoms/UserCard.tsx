@@ -1,28 +1,23 @@
 import { ImageLoader } from "@/utils/ImageLoader";
 import Image from "next/image";
 import React from "react";
+import logo2 from '../../assets/images/2_logo Kemendesa.png'
+
 
 type props = {
 	username: string;
-	address?: string;
-	url: string;
-  email: string;
-	action: (e: React.MouseEvent) => void
+	position: string;
 };
 
-const UserCard = ({ username, address, url, email, action }: props) => {
+const UserCard = ({ username, position }: props) => {
 
 	return (
-		<div onClick={(e) => {action(e)}} className="flex flex-wrap p-2 items-center m-1 border-gray-600 border-2 cursor-pointer hover:scale-105">
-			{/* Read more about next/Image at https://nextjs.org/docs/api-reference/next/image */}
-			<Image loader={ImageLoader} width={50} height={50} src={url} alt={username} />
-			<div className="flex flex-col">
-				<h3 className="font-bold">{username}</h3>
-				<span className="inline-block">{address}</span>
-				<span>{email}</span>
-			</div>
+		<div className="mt-5">
+			<Image src={logo2} height={250} width={250} alt='' className="bg-slate-600 rounded-full" />
+			<p className="text-3xl w-[18rem] font-bold text-[#F07167] ">{username}</p>
+			<p className="text-center mt-2">{position}</p>
 		</div>
 	);
-}	
+}
 
 export default UserCard;

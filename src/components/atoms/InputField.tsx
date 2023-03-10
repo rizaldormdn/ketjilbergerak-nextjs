@@ -21,7 +21,7 @@ const InputField = ({ label, name, type, value, placeHolder, onChange }: input) 
           <div className='flex flex-col p-2'>
                <label htmlFor={name} className='text-[#F07167] font-bold'>{label}</label>
                <input
-                    className='p-2 rounded-3xl mt-2 bg-gray-100'
+                    className='p-2 px-2 rounded-3xl mt-2 bg-gray-100'
                     name={name}
                     type={type}
                     value={value}

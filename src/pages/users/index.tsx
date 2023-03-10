@@ -43,12 +43,13 @@ const MePage = ({ users }: props) => {
 			{users.map((value, index) => {
 				return (
 					<UserCard
-						action={() => {handlingRoute(value.id)}}
+						// action={() => {handlingRoute(value.id)}}
 						key={index}
 						username={value.firstName + value.lastName}
-						address={value.address.address}
-						email={value.email}
-						url={value.image}
+						// address={value.address.address}
+						// email={value.email}
+						// url={value.image}
+						position={'kakak'}
 					/>
 				);
 			})}
