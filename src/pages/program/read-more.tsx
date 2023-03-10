@@ -1,38 +1,15 @@
-import BlankTemplate from "@/components/templates/BlankTemplate"
-import { CommonSEO } from "@/components/SEO"
-import Image from "next/image"
-import Rectangle229 from '../../assets/images/Rectangle 229.png'
-import Rectangle228 from '../../assets/images/Rectangle 228.png'
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import MediaSosial from "@/components/molecules/MediaSosial"
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Footer from "@/components/molecules/Footer"
 import PrimaryNavigation from "@/components/molecules/PrimaryNavigation"
-import CardContent from "@/components/molecules/CardContent"
-
+import { CommonSEO } from "@/components/SEO"
+import BlankTemplate from "@/components/templates/BlankTemplate"
 
 const ReadMore = () => {
-  const listContent = [
-    {
-      title: "Dapoer Bergerak",
-      desc: "Lorem ipsum dolor sit amet consectet adipiscing elit eget quamumto.",
-      styled: "bg-bg1 no-repeat bg-cover text-xl"
-    },
-    {
-      title: "Pemuda Desa",
-      desc: "Lorem ipsum dolor sit amet consectet adipiscing elit eget quamumto.",
-      styled: "bg-bg2 no-repeat bg-cover text-xl"
-    },
-    {
-      title: "Company growth",
-      desc: "Lorem ipsum dolor sit amet consectet adipiscing elit eget quamumto.",
-      styled: "bg-bg3 no-repeat bg-cover text-xl "
-    }
-  ];
+  
   return (
     <BlankTemplate>
       <CommonSEO title='Article' description='this is Article page' />
       <PrimaryNavigation />
+<<<<<<< HEAD
       <div className="p-4 md:max-w-7xl md:mx-auto mb-20">
         <div className="flex gap-3 text-sm">
           <div className="flex gap-2 items-center text-cyan-700">
@@ -72,6 +49,9 @@ const ReadMore = () => {
           <CardContent />
         </div>
       </div>
+=======
+     
+>>>>>>> 2dcd7200939ebb754e80cfe26c286227556b1a6a
       <Footer />
     </BlankTemplate>
   )

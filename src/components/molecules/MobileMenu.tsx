@@ -2,8 +2,8 @@ import DehazeIcon from '@mui/icons-material/Dehaze';
 import Link from "next/link";
 import { useState } from "react";
 
-const MobileMenu = () => {
-  const [menu, setMenu] = useState(false)
+export const MobileNavigation = () => {
+  const [menu, setMenu] = useState<boolean>(false)
   return (
     <>
       <div>
@@ -23,4 +23,3 @@ const MobileMenu = () => {
     </>
   )
 }
-export default MobileMenu;

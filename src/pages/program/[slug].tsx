@@ -10,11 +10,12 @@ const ProgramPost = () => {
           <BlankTemplate>
                <PrimaryNavigation />
                <h1>Welcome to program page!</h1>
-               <p>Here is the query of the program page: <code className="font-bold bg-red-500 px-2">{router.query.slug}</code></p>
+               <p>Here is the query of the program page: <code className="font-bold bg-red-500 px-2">{JSON.stringify(router.query)}</code></p>
           </BlankTemplate>
      )
 }
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
+     console.log(ctx);
      return {
           props: {
                data: null,

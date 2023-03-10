@@ -22,7 +22,11 @@ const InputField = ({ label, name, type, value, placeHolder, style, onChange }: 
           <div className='flex flex-col p-2'>
                <label htmlFor={name} className='text-[#F07167] font-bold'>{label}</label>
                <input
+<<<<<<< HEAD
                     className={`p-2 rounded-3xl mt-2 bg-gray-100 ${style}`}
+=======
+                    className='p-2 px-2 rounded-3xl mt-2 bg-gray-100'
+>>>>>>> 2dcd7200939ebb754e80cfe26c286227556b1a6a
                     name={name}
                     type={type}
                     value={value}
