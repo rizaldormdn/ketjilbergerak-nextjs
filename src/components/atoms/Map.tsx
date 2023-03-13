@@ -12,10 +12,10 @@ const Map = () => {
      }
      return (
           <>
-               <div className="flex md:justify-evenly md:p-7 items-center flex-wrap bg-[#F2F1FA]">
+               <div className="flex md:justify-between items-center flex-wrap">
                     <div className=''>
                          <iframe
-                              className="rounded-xl md:w-[600px] md:h-[450px]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.183889869245!2d106.86230024983246!3d-6.7474133678279005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69cba972ba3183%3A0x53c233b4f3eda3f!2sWISATA%20SEKOLAH%20ALAM%20PANGRANGO!5e0!3m2!1sen!2sid!4v1678072846984!5m2!1sen!2sid"
+                              className="rounded-xl md:w-[500px] md:h-[400px]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.183889869245!2d106.86230024983246!3d-6.7474133678279005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69cba972ba3183%3A0x53c233b4f3eda3f!2sWISATA%20SEKOLAH%20ALAM%20PANGRANGO!5e0!3m2!1sen!2sid!4v1678072846984!5m2!1sen!2sid"
                               width="410" height="350" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade">
                          </iframe>
                     </div>

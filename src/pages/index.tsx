@@ -11,7 +11,7 @@ const index = () => {
 		<BlankTemplate>
 			<CommonSEO title="Home" description="Description of Create Next Page by Russ" />
 			<PrimaryNavigation />
-			<FirstSectionField/>
+			<FirstSectionField />
 			<ThirdSection />
 			<Instagram />
 			<Footer />

@@ -8,11 +8,11 @@ import Map from '../atoms/Map'
 const Contact = () => {
      return (
           <>
-               <div className='flex items-center flex-wrap justify-evenly md:mt-10'>
+               <div className='flex items-center flex-wrap justify-between md:mt-10'>
                     <div>
-                         <Image src={kb1} width={675} height={1104} alt='' />
+                         <Image src={kb1} width={500} height={100} alt='' />
                     </div>
-                    <div className='px-10 mt-10'>
+                    <div className='md:px-0 px-2 mt-10'>
                          <h1 className=' font-bold text-5xl text-[#F07167]'>Get in touch today</h1>
                          <p className='text-gray-300 mt-5 ml-3'>keep in touch with us!</p>
                          <div className='mt-10'>

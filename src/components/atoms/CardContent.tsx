@@ -28,7 +28,7 @@ const CardContent = () => {
     <>
       {featured.map((list) => (
         <div key={list.slug} className="relative">
-          <Image className="rounded-xl opacity-80" src={kb3} width={300} height={225} alt='' />
+          <Image className="rounded-xl opacity-80 lg:w-[280px]" src={kb3} width={300} height={225} alt='' />
           <div className="absolute inset-0 flex flex-col justify-end p-4">
             <h1 className="text-[#F07167]">{list.title}</h1>
             <p className="text-white">{list.excerpt}</p>

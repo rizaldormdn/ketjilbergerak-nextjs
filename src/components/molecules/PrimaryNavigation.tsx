@@ -5,7 +5,7 @@ import { MobileNavigation } from "./MobileMenu";
 const PrimaryNavigation = () => {
 
 	return (
-		<nav className="md:py-8 py-4 flex mx-auto justify-between items-center md:max-w-7xl">
+		<nav className="md:py-8 py-4 flex mx-auto justify-between items-center">
 			<div className="md:px-1 px-3">
 				<Logo />
 			</div>
