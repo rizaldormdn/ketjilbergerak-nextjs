@@ -38,15 +38,15 @@ export const Instagram = () => {
      ]
      return (
 
-          <div className="p-4">
-               <h1 className="mb-8 md:ml-[] ml-[] text-[#F07167] md:text-4xl">Follow Us!</h1>
-               <div className='flex md:justify-between justify-evenly gap-10 flex-wrap gap-y-5'>
+          <div className="p-4 bg-[#F5F5F5]">
+               <h1 className="mb-8 md:ml-[8rem] ml-[3.5rem] text-[#F07167] md:text-4xl">Follow Us!</h1>
+               <div className='flex justify-evenly flex-wrap gap-x-[10rem] gap-y-5 w-3/4 mx-auto'>
                     {instagramList.map((list) => (
                          <Link key={list.id} href={list.href}>
                               <Image className="rounded-lg"
                                    src={list.src}
                                    unoptimized
-                                   width={280}
+                                   width={200}
                                    height={200}
                                    alt="instagram1"
                               />
