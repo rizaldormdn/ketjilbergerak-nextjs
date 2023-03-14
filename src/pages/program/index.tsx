@@ -4,21 +4,20 @@ import { ProgramTemplate } from "@/components/templates/ProgramTemplate";
 import axios from "axios";
 import { GetServerSideProps } from "next";
 
-type props = {
+type Props = {
+     programs: Program[]
+}
+type Program = {
      image_thumbnail_url: string,
      slug: string,
      title: string,
      excerpt: string
 }
-type program = {
-     programs: props[]
-}
-const Index = (props: program) => {
-     const { programs } = props
+const Index = ({ programs }: Props) => {
      return (
           <ProgramTemplate>
                <CommonSEO title="Program" description="" />
-               {programs && programs.length && programs.map((v, index) => (
+               {programs.map((v, index) => (
                     <div key={v.slug}>
                          <ProgramSection
                               slug={v.slug}
@@ -33,8 +32,9 @@ const Index = (props: program) => {
      )
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
-     const response = await axios.get('http://localhost:8080/v1/program')
+export const getServerSideProps: GetServerSideProps<Props> = async ({ query }) => {
+     const page = query.page ? parseInt(query.page as string) : 1
+     const response = await axios.get(`http://localhost:8080/v1/program?page=${page}`,)
      const programs = await response.data.data.program
 
      return {

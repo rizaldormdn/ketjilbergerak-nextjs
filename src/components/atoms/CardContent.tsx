@@ -1,40 +1,22 @@
-import axios from "axios";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import kb3 from "../../assets/images/kb3.png";
 
 type props = {
-  slug: string
+  slug?: string
   image_thumbnail_url: string
   title: string
   excerpt: string
 }
 
-const CardContent = () => {
-  const [featured, setFeatured] = useState<props[]>([])
-
-  useEffect(() => {
-    const getFeaturedArticle = async () => {
-      try {
-        const response = await axios.get('http://localhost:8080/v1/featured-program')
-        setFeatured(response.data.data)
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getFeaturedArticle()
-  }, [])
+const CardContent = (props: props) => {
   return (
     <>
-      {featured.map((list) => (
-        <div key={list.slug} className="relative">
-          <Image className="rounded-xl opacity-80 lg:w-[280px]" src={kb3} width={300} height={225} alt='' />
-          <div className="absolute inset-0 flex flex-col justify-end p-4">
-            <h1 className="text-[#F07167]">{list.title}</h1>
-            <p className="text-white">{list.excerpt}</p>
-          </div>
+      <div className="relative">
+        <Image className="rounded-xl opacity-80 lg:w-[280px]" src={props.image_thumbnail_url} width={300} height={225} alt='' />
+        <div className="absolute inset-0 flex flex-col justify-end p-4">
+          <h1 className="text-[#F07167]">{props.title}</h1>
+          <p className="text-white">{props.excerpt}</p>
         </div>
-      ))}
+      </div>
     </>
   );
 };

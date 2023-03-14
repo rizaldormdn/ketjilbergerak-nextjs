@@ -4,7 +4,7 @@ import PrimaryNavigation from '@/components/molecules/PrimaryNavigation'
 import { useRouter } from 'next/router'
 import { GetServerSideProps } from 'next'
 
-const ProgramPost = () => {
+const DetailProgram = () => {
      const router = useRouter()
      return (
           <BlankTemplate>
@@ -23,4 +23,4 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
      };
 };
 
-export default ProgramPost
+export default DetailProgram

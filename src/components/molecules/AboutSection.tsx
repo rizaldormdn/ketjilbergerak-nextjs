@@ -59,7 +59,7 @@ export const AboutSection = () => {
                 </div>
                 <div className="p-2">
                     <h2 className="font-bold text-4xl mt-10">Mitra Kerja Sama</h2>
-                    <div className=" mt-10 md:ml-[2rem]">
+                    <div className=" mt-10 ml-[2rem]">
                         <Slider />
                     </div>
                 </div>
