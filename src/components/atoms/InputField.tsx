@@ -6,7 +6,6 @@ type input = {
      type: string
      value: string
      placeHolder: string
-     style: string
      onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
 }
 type text = {
@@ -17,16 +16,12 @@ type text = {
      onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
 }
 
-const InputField = ({ label, name, type, value, placeHolder, style, onChange }: input) => {
+const InputField = ({ label, name, type, value, placeHolder, onChange }: input) => {
      return (
           <div className='flex flex-col p-2'>
                <label htmlFor={name} className='text-[#F07167] font-bold'>{label}</label>
                <input
-<<<<<<< HEAD
-                    className={`p-2 rounded-3xl mt-2 bg-gray-100 ${style}`}
-=======
                     className='p-2 px-2 rounded-3xl mt-2 bg-gray-100'
->>>>>>> 2dcd7200939ebb754e80cfe26c286227556b1a6a
                     name={name}
                     type={type}
                     value={value}
@@ -42,7 +37,7 @@ const TextArea = ({ name, value, label, placeHolder, onChange }: text) => {
           <div className='flex flex-col'>
                <label htmlFor={name} className='text-[#F07167] font-bold ml-3'>{label}</label>
                <textarea
-                    className='p-6 mx-2 rounded-3xl mt-2 bg-gray-100'
+                    className='p-6 rounded-3xl mt-2 bg-gray-100'
                     name={name}
                     value={value}
                     onChange={onChange}

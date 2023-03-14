@@ -1,22 +1,12 @@
 import Link from "next/link";
-<<<<<<< HEAD
-import MobileMenu from "./MobileMenu";
-import { Logo } from "../atoms/Logo";
-=======
 import { Logo } from "../atoms/Logo";
 import { MobileNavigation } from "./MobileMenu";
->>>>>>> 2dcd7200939ebb754e80cfe26c286227556b1a6a
 
 const PrimaryNavigation = () => {
 
 	return (
-<<<<<<< HEAD
-		<nav className="flex mx-auto justify-between items-center md:max-w-7xl">
-			<div className="px-4 md:ml-10 ">
-=======
 		<nav className="md:py-8 py-4 flex mx-auto justify-between items-center md:max-w-7xl">
-			<div className="md:px-1 px-3">
->>>>>>> 2dcd7200939ebb754e80cfe26c286227556b1a6a
+			<div className="md:px-1 md:ml-10 px-3">
 				<Logo />
 			</div>
 			<div className="px-4">

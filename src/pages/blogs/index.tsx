@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-
-function index() {
-  return (
-    <div>index</div>
-  )
-}
-
-export default index
-=======
 import Button from '@/components/atoms/Button'
 import { CardArticle } from '@/components/atoms/CardArticle'
 import Footer from '@/components/molecules/Footer'
@@ -70,9 +59,9 @@ const Index = () => {
                <PrimaryNavigation />
                <>
                     <div className='mx-auto max-w-7xl'>
-                         <h1 className='text-[#A03C78] md:text-6xl text-4xl md:p-0 p-2'>Artikel Ketjil Bergerak Terbaru</h1>
-                         <div className='mt-10 flex items-center justify-between flex-wrap md:p-0 p-2'>
-                              <div className='w-[30rem] mb-10'>
+                         <h1 className='text-[#A03C78] md:text-6xl  text-4xl md:p-0 p-2  md:ml-10'>Artikel Ketjil Bergerak Terbaru</h1>
+                         <div className='mt-10 flex items-center justify-evenly flex-wrap md:p-0 p-2'>
+                              <div className='w-[30rem] mb-10 '>
                                    <h2 className='md:text-4xl text-2xl text-[#A03C78] font-bold mb-5'>3 Skripsi yang digarap dengan kreatif oleh para mahasiswa Amikom Yogyakarta</h2>
                                    <p>Wow, sudah ada 13 skripsi/thesis yang mencoba mengupas gerakan
                                         <span>
@@ -86,9 +75,9 @@ const Index = () => {
                                    <Image src={sosmed5} width={500} height={500} alt='' />
                               </div>
                          </div>
-                         <div className='mt-5'>
+                         <div className='mt-5 md:ml-10'>
                               <h1 className='text-[#A03C78] md:text-6xl text-4xl md:p-0 p-2'>Artikel Ketjil Bergerak Lainnya</h1>
-                              <div className='flex gap-10 mt-10 flex-wrap md:p-0 p-2'>
+                              <div className='flex gap-10 justify-evenly mt-10 flex-wrap md:p-0 p-2'>
                                    {articleList.map((list) => (
                                         <div key={list.title}>
                                              <CardArticle title={list.title} excerpt={list.excerpt} date={list.date} />
@@ -104,4 +93,3 @@ const Index = () => {
      )
 }
 export default Index
->>>>>>> 2dcd7200939ebb754e80cfe26c286227556b1a6a

@@ -15,22 +15,14 @@ export const AboutSection = () => {
     ]
     return (
         <>
-<<<<<<< HEAD
-            <div className="md:flex items-center justify-evenly py-5 mx-auto bg-[#F5F5F5]">
-                <div className="mb-4 p-2 text-white">
-                    <h1 className="font-bold text-4xl text-[#F07167]">TENTANG KETJIL BERGERAK</h1>
-                    <p className="w-[24rem] mt-4 mb-6 text-black">Selamat datang di Ketjil Bergerak! Kami adalah organisasi nirlaba yang didirikan pada 2006 dan berbasis di Yogyakarta, Indonesia.</p>
-                    <Button action={(e) => { alert('Triggered') }} title="Perkenalan Ketjil Bergerak!" buttonColor="bg-[#F07167]" textColor="text-white"/>
-=======
-            <div className="">
-                <div className="mx-auto max-w-7xl p-2">
-                    <h1 className="font-bold md:text-4xl text-2xl mx-auto">Tentang Ketjil Bergerak</h1>
-                    <iframe className="mt-5 mx-auto md:w-[80rem] w-full h-[35rem] rounded-xl" src="https://www.youtube.com/embed/CUqQtTdRocE" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            <div className="bg-[#f5f5f5]">
+                <div className="mx-auto max-w-7xl p-2 ">
+                    <h1 className="font-bold md:text-4xl text-2xl mx-auto md:ml-16">Tentang Ketjil Bergerak</h1>
+                    <iframe className="mt-5 mx-auto md:w-[70rem] w-full h-[35rem] rounded-xl" src="https://www.youtube.com/embed/CUqQtTdRocE" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                     <p className="text-gray-400 text-center md:text-base text-sm">Telah Rilis! Sebuah lagu penyemangat di situasi yang semakin menghimpit</p>
->>>>>>> 2dcd7200939ebb754e80cfe26c286227556b1a6a
                 </div>
-                <div className="max-w-7xl mx-auto p-2">
-                    <h2 className="font-bold text-4xl">Latar Belakang</h2>
+                <div className="max-w-7xl mx-auto p-2 md:mx-14">
+                    <h2 className="font-bold text-4xl ">Latar Belakang</h2>
                     <p className="mt-5">
                         Greg Sindana dan Invani Lela Herliana pertama kali bertemu pada tahun 2005
                         ketika mereka masih menjadi mahasiswa di salah satu fakultas keguruan dan ilmu pendidikan di Yogyakarta.
@@ -61,18 +53,19 @@ export const AboutSection = () => {
                         (ilmu dan pengetahuan diperoleh dari pengalaman nyata).
                     </p>
                 </div>
-                <div className="mx-auto max-w-7xl p-2">
-                    <h2 className="font-bold text-4xl mt-10">Linimasa Ketjil Bergerak</h2>
-                    <Image className="mx-auto mt-10" src={img} width={1280} height={500} alt='' />
+                <div className="mx-auto max-w-7xl p-2 ">
+                    <h2 className="font-bold text-4xl mt-10 md:ml-16">Linimasa Ketjil Bergerak</h2>
+                    <Image className="mx-auto mt-10" src={img} width={1140} height={500} alt='' />
                 </div>
                 <div className="mx-auto max-w-7xl p-2">
-                    <h2 className="font-bold text-4xl mt-10">Mitra Kerja Sama</h2>
+                    <h2 className="font-bold text-4xl mt-10 md:ml-16">Mitra Kerja Sama</h2>
+                    <p className=" text-xl md:ml-16">Berikut adalah partner yang bekerja sama dengan Ketjil Bergerak</p>
                     <div className="ml-[6rem] mt-20">
                         <Slider />
                     </div>
                 </div>
                 <div className="mx-auto max-w-7xl mt-20">
-                    <h2 className="font-bold text-4xl md:p-0 p-2">Tim Ketjil Bergerak</h2>
+                    <h2 className="font-bold text-4xl md:p-0 p-2 md:ml-16">Tim Ketjil Bergerak</h2>
                     <div className="flex md:justify-between justify-center items-center flex-wrap">
                         {tim.map((list) => (
                             <div key={list.name}>

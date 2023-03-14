@@ -11,10 +11,6 @@ type props = {
 };
 
 const ThirdSection = () => {
-<<<<<<< HEAD
-  
-=======
->>>>>>> 2dcd7200939ebb754e80cfe26c286227556b1a6a
   const router = useRouter()
   return (
     <>
@@ -25,15 +21,8 @@ const ThirdSection = () => {
               <h1 className="text-[#F07167]">Program Unggulan</h1>
               <p className="text-black">Program unggulan untuk mencapai misi kami.</p>
             </div>
-<<<<<<< HEAD
-            <div className="flex justify-evenly flex-wrap gap-5 mt-14">
-              
-                  <CardContent  />
-                
-=======
             <div className="flex justify-evenly flex-wrap md:gap-0 gap-5 mt-14">
                   <CardContent/>
->>>>>>> 2dcd7200939ebb754e80cfe26c286227556b1a6a
             </div>
             <div className="flex mt-16 justify-center">
               <Button action={(e) => { router.push('/program') }} title="Lihat Program Selengkapnya" buttonColor="bg-[#F5F5F5]" />
