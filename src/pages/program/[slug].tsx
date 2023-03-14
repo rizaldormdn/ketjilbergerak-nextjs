@@ -4,13 +4,13 @@ import PrimaryNavigation from '@/components/molecules/PrimaryNavigation'
 import { useRouter } from 'next/router'
 import { GetServerSideProps } from 'next'
 
-const ProgramPost = () => {
+const DetailProgram = () => {
      const router = useRouter()
      return (
           <BlankTemplate>
                <PrimaryNavigation />
                <h1>Welcome to program page!</h1>
-               <p>Here is the query of the program page: <code className="font-bold bg-red-500 px-2">{JSON.stringify(router.query)}</code></p>
+               <p>Here is the query of the program page: <code className="font-bold bg-red-500 px-2">{router.query.slug}</code></p>
           </BlankTemplate>
      )
 }
@@ -23,4 +23,4 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
      };
 };
 
-export default ProgramPost
+export default DetailProgram

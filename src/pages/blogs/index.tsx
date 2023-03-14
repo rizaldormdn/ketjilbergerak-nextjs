@@ -1,58 +1,33 @@
-import Button from '@/components/atoms/Button'
-import { CardArticle } from '@/components/atoms/CardArticle'
+import { ArticleSection } from '@/components/molecules/ArticleSection'
 import Footer from '@/components/molecules/Footer'
 import PrimaryNavigation from '@/components/molecules/PrimaryNavigation'
 import { CommonSEO } from '@/components/SEO'
 import BlankTemplate from '@/components/templates/BlankTemplate'
-import Image from 'next/image'
-import React from 'react'
-import sosmed5 from '../../assets/images/Sosmed5.png'
+import axios from 'axios'
+import { GetServerSideProps } from 'next'
 
-const Index = () => {
-     const articleList = [
-          {
-               title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-               excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-               Vivamus commodo luctus venenatis. Integer rhoncus iaculis quam,
-               et iaculis odio sagittis consequat. In at enim justo. Ut in lacus a sem iaculis accumsan.`,
-               date: "31 January 2030"
-          },
-          {
-               title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-               excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-               Vivamus commodo luctus venenatis. Integer rhoncus iaculis quam,
-               et iaculis odio sagittis consequat. In at enim justo. Ut in lacus a sem iaculis accumsan.`,
-               date: "31 January 2030"
-          },
-          {
-               title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-               excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-               Vivamus commodo luctus venenatis. Integer rhoncus iaculis quam,
-               et iaculis odio sagittis consequat. In at enim justo. Ut in lacus a sem iaculis accumsan.`,
-               date: "31 January 2030"
-          },
-          {
-               title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-               excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-               Vivamus commodo luctus venenatis. Integer rhoncus iaculis quam,
-               et iaculis odio sagittis consequat. In at enim justo. Ut in lacus a sem iaculis accumsan.`,
-               date: "31 January 2030"
-          },
-          {
-               title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-               excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-               Vivamus commodo luctus venenatis. Integer rhoncus iaculis quam,
-               et iaculis odio sagittis consequat. In at enim justo. Ut in lacus a sem iaculis accumsan.`,
-               date: "31 January 2030"
-          },
-          {
-               title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-               excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-               Vivamus commodo luctus venenatis. Integer rhoncus iaculis quam,
-               et iaculis odio sagittis consequat. In at enim justo. Ut in lacus a sem iaculis accumsan.`,
-               date: "31 January 2030"
-          },
-     ]
+type Props = {
+     data1: {
+          slug: string
+          title: string,
+          excerpt: string,
+          image_thumbnail_url: string,
+     }[]
+     data2: {
+          articles: {
+               title: string,
+               excerpt: string,
+               image_thumbnail_url: string,
+               slug: string
+               date: {
+                    created_at: string
+               }
+          }[]
+     }
+}
+
+const Index = ({ data1, data2 }: Props) => {
+
      return (
           <BlankTemplate>
                <CommonSEO title='blog' description='page blog' />
@@ -91,5 +66,22 @@ const Index = () => {
                <Footer />
           </BlankTemplate>
      )
+};
+
+export const getServerSideProps: GetServerSideProps<Props> = async ({ query }) => {
+     const page = query.page ? parseInt(query.page as string) : 1
+     const [res1, res2] = await Promise.all([
+          axios.get('http://localhost:8080/v1/featured-articles'),
+          axios.get(`http://localhost:8080/v1/articles?page=${page}`)
+     ])
+     console.log(res1.data.data);
+     console.log(res2.data.data);
+
+     return {
+          props: {
+               data1: res1.data.data,
+               data2: res2.data.data
+          }
+     }
 }
 export default Index

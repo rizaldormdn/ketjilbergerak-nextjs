@@ -14,14 +14,11 @@ const Footer = () => {
 					<p className="mt-2">Siapa saja yang muda, kreatif, <br /> berani dan berdikari adalah <span><a href="https://www.instagram.com/explore/tags/ketjilbergerak/" className="hover:underline hover:text-[#FF597B] text-[#F07167]">#ketjilbergerak</a></span><br /> Indonesia</p>
 					<MediaSosial style="bg-gray-200 mr-5 mt-2 P-2 text-[#F07167] cursor-pointer rounded" />
 				</div>
-
-				<div className="md:flex md:px-10 gap-10 mt-4">
-					<LinkFooter />
-					<div className="text-white ml-[]">
-						<Button action={(e) => { alert('Triggered') }} title="Donate Us!" buttonColor="bg-[#F07167]" />
-						<p className="font-bold text-black mt-5 mb-5">Powered By</p>
-						<Image src={salt} width={100} height={100} alt='' className="md:w-[120px]" />
-					</div>
+				<LinkFooter />
+				<div className="text-white ml-[]">
+					<Button action={(e) => { alert('Triggered') }} title="Donate Us!" buttonColor="bg-[#F07167]" />
+					<p className="font-bold text-black mt-5 mb-5">Powered By</p>
+					<Image src={salt} width={100} height={100} alt='' className="md:w-[120px]" />
 				</div>
 			</div>
 			<div className="h-[1px] bg-black mx-auto text-center text-lg items-center mt-6" >

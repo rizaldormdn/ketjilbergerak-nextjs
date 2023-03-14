@@ -13,7 +13,7 @@ import 'swiper/css';
 export const Slider = () => {
      return (
           <Swiper
-               slidesPerView={1}
+               slidesPerView={2}
                breakpoints={{
                     640: {
                          slidesPerView: 4

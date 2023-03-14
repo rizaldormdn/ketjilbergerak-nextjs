@@ -1,7 +1,5 @@
-import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import Button from "../atoms/Button";
 
 type program = {
@@ -9,23 +7,10 @@ type program = {
     image_thumbnail_url: string
     title: string
     excerpt: string
+    index: number
 }
 
-export const ProgramSection = () => {
-    const [listProgram, setListProgram] = useState<program[]>([])
-
-    useEffect(() => {
-        const getProgram = async () => {
-            try {
-                const response = await axios.get('http://localhost:8080/v1/program')
-                setListProgram(response.data.data.program)
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        getProgram()
-    }, [])
-
+export const ProgramSection = ({ slug, image_thumbnail_url, title, excerpt, index }: program) => {
     const router = useRouter()
     return (
         <>

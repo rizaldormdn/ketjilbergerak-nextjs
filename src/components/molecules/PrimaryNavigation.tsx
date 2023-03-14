@@ -10,7 +10,7 @@ const PrimaryNavigation = () => {
 				<Logo />
 			</div>
 			<div className="px-4">
-				<ul className="hidden md:flex gap-2 mx-7">
+				<ul className="hidden md:flex space-x-6">
 					<Link className="block hyperlink hovers" href="/">Home</Link>
 					<Link className="block hyperlink hovers" href="/program">Program</Link>
 					<Link className="block hyperlink hovers" href="/about">About</Link>
