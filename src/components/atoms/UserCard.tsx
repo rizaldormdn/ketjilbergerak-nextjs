@@ -1,7 +1,7 @@
 import { ImageLoader } from "@/utils/ImageLoader";
 import Image from "next/image";
 import React from "react";
-import logo2 from '../../assets/images/2_logo Kemendesa.png'
+import logo15 from '../../assets/images/m.jpg'
 
 
 type props = {
@@ -12,10 +12,10 @@ type props = {
 const UserCard = ({ username, position }: props) => {
 
 	return (
-		<div className="mt-10 flex flex-col items-center">
-			<Image src={logo2} height={150} width={150} alt='' className="bg-slate-600 rounded-full" />
-			<p className="text-1xl w-[15rem] text-center font-bold text-[#F07167] ">{username}</p>
-			<p className="text-center text-gray-400 text-base">{position}</p>
+		<div className="mt-5 md:mx-6 flex flex-col items-center ">
+			<Image src={logo15} height={150} width={200} alt='' className="bg-slate-600 rounded-full" />
+			<p className="text-xl text-center w-[15rem] font-bold text-[#F07167] ">{username}</p>
+			{/* <p className="text-center mt-2">{position}</p> */}
 		</div>
 	);
 }

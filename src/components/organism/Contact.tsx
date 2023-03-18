@@ -10,7 +10,7 @@ const Contact = () => {
           <>
                <div className='flex items-center flex-wrap justify-between md:mt-10'>
                     <div>
-                         <Image src={kb1} width={500} height={100} alt='' />
+                         <Image src={kb1} width={650} height={1104} alt='' />
                     </div>
                     <div className='md:px-0 px-2 mt-10'>
                          <h1 className=' font-bold text-5xl text-[#F07167]'>Get in touch today</h1>

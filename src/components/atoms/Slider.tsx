@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import React from 'react'
-import sa from "../../assets/images/1_logo KPK.png"
-import sb from "../../assets/images/4_logo USD.png"
-import sc from "../../assets/images/3_logo UGM.png"
-import sd from "../../assets/images/2_logo Kemendesa.png"
+import sa from "../../assets/images/Sosmed2.png"
+import sb from "../../assets/images/1_logo KPK.png"
+import sc from "../../assets/images/2_logo Kemendesa.png"
+import sd from "../../assets/images/3_logo UGM.png"
+import se from "../../assets/images/4_logo USD.png"
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';

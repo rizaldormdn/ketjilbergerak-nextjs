@@ -15,14 +15,14 @@ export const AboutSection = () => {
     ]
     return (
         <>
-            <div className="">
-                <div className="p-2">
-                    <h1 className="font-bold md:text-4xl text-2xl mx-auto">Tentang Ketjil Bergerak</h1>
-                    <iframe className="mt-5 mx-auto w-full h-[30rem] rounded-xl" src="https://www.youtube.com/embed/CUqQtTdRocE" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            <div className="bg-[#f5f5f5]">
+                <div className="mx-auto max-w-7xl p-2 ">
+                    <h1 className="font-bold md:text-4xl text-2xl mx-auto md:ml-16">Tentang Ketjil Bergerak</h1>
+                    <iframe className="mt-5 mx-auto md:w-[70rem] w-full h-[35rem] rounded-xl" src="https://www.youtube.com/embed/CUqQtTdRocE" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                     <p className="text-gray-400 text-center md:text-base text-sm">Telah Rilis! Sebuah lagu penyemangat di situasi yang semakin menghimpit</p>
                 </div>
-                <div className="p-2">
-                    <h2 className="font-bold text-4xl">Latar Belakang</h2>
+                <div className="max-w-7xl mx-auto p-2 md:mx-14">
+                    <h2 className="font-bold text-4xl ">Latar Belakang</h2>
                     <p className="mt-5">
                         Greg Sindana dan Invani Lela Herliana pertama kali bertemu pada tahun 2005
                         ketika mereka masih menjadi mahasiswa di salah satu fakultas keguruan dan ilmu pendidikan di Yogyakarta.
@@ -53,18 +53,19 @@ export const AboutSection = () => {
                         (ilmu dan pengetahuan diperoleh dari pengalaman nyata).
                     </p>
                 </div>
-                <div className="p-2">
-                    <h2 className="font-bold text-4xl mt-10">Linimasa Ketjil Bergerak</h2>
-                    <Image className="mx-auto mt-10" src={img} width={1280} height={500} alt='' />
+                <div className="mx-auto max-w-7xl p-2 ">
+                    <h2 className="font-bold text-4xl mt-10 md:ml-16">Linimasa Ketjil Bergerak</h2>
+                    <Image className="mx-auto mt-10" src={img} width={1140} height={500} alt='' />
                 </div>
-                <div className="p-2">
-                    <h2 className="font-bold text-4xl mt-10">Mitra Kerja Sama</h2>
-                    <div className=" mt-10 ml-[2rem]">
+                <div className="mx-auto max-w-7xl p-2">
+                    <h2 className="font-bold text-4xl mt-10 md:ml-16">Mitra Kerja Sama</h2>
+                    <p className=" text-xl md:ml-16">Berikut adalah partner yang bekerja sama dengan Ketjil Bergerak</p>
+                    <div className="ml-[6rem] mt-20">
                         <Slider />
                     </div>
                 </div>
-                <div className="mt-20">
-                    <h2 className="font-bold text-4xl md:p-0 p-2">Tim Ketjil Bergerak</h2>
+                <div className="mx-auto max-w-7xl mt-20">
+                    <h2 className="font-bold text-4xl md:p-0 p-2 md:ml-16">Tim Ketjil Bergerak</h2>
                     <div className="flex md:justify-between justify-center items-center flex-wrap">
                         {tim.map((list) => (
                             <div key={list.name}>

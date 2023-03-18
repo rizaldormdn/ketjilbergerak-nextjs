@@ -46,7 +46,7 @@ export const Instagram = () => {
                               <Image className="rounded-lg hover:scale-110 duration-300"
                                    src={list.src}
                                    unoptimized
-                                   width={280}
+                                   width={200}
                                    height={200}
                                    alt="instagram1"
                               />
