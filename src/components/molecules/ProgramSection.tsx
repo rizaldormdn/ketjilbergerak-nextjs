@@ -25,6 +25,7 @@ export const ProgramSection = ({ slug, image_thumbnail_url, title, excerpt, inde
                         <Button action={(e) => { router.push(`/program/${slug}`) }} title="Selengkapnya" buttonColor="bg-[#F07167]" />
                     </div>
                 </div>
+                
             </div>
         </>
     )

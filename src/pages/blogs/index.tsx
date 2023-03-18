@@ -44,8 +44,6 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ query }) =
           axios.get('http://localhost:8080/v1/featured-articles'),
           axios.get(`http://localhost:8080/v1/articles?page=${page}`)
      ])
-     console.log(res1.data.data);
-     console.log(res2.data.data);
 
      return {
           props: {

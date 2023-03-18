@@ -9,7 +9,7 @@ type props = {
 
 export const CardArticle = ({ title, excerpt, date }: props) => {
      return (
-          <div className='w-[350px] shadow-lg rounded-xl cursor-pointer transition hover:duration-700 ease-in-out'>
+          <div className='w-[350px] shadow-lg rounded-xl cursor-pointer hover:scale-110 duration-300'>
                <Image src={sosmed5} height={300} width={400} alt='' className='rounded-t-xl' />
                <div className='p-3'>
                     <h2 className='text-2xl font-bold text-[#F07167]'>{title}</h2>

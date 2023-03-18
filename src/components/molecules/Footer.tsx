@@ -9,10 +9,10 @@ const Footer = () => {
 	return (
 		<footer className="p-2 bg-[#FFFFFF] md:mt-10">
 			<div className="flex md:justify-between md:items-center md:flex-row flex-col space-y-10 p-2">
-				<div className="">
+				<div className="md:mt-12">
 					<Logo />
 					<p className="mt-2">Siapa saja yang muda, kreatif, <br /> berani dan berdikari adalah <span><a href="https://www.instagram.com/explore/tags/ketjilbergerak/" className="hover:underline hover:text-[#FF597B] text-[#F07167]">#ketjilbergerak</a></span><br /> Indonesia</p>
-					<MediaSosial style="bg-gray-200 mr-5 mt-2 P-2 text-[#F07167] cursor-pointer rounded" />
+					<MediaSosial style="bg-gray-200 mr-5 mt-2 text-[#F07167] cursor-pointer rounded" />
 				</div>
 				<LinkFooter />
 				<div className="text-white ml-[]">
