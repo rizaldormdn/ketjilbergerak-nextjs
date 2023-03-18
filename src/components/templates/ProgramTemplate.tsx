@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router'
-import React, { useRef } from 'react'
-import Button from '../atoms/Button'
+import React from 'react'
 import { Container } from '../atoms/Container'
 import Footer from '../molecules/Footer'
 import PrimaryNavigation from '../molecules/PrimaryNavigation'
@@ -12,7 +11,6 @@ type props = {
 
 export const ProgramTemplate = ({ children }: props) => {
      const router = useRouter()
-
      return (
           <>
                <div className='max-w-6xl mx-auto'>

@@ -1,7 +1,9 @@
-import { useRouter } from 'next/router'
-import Button from '../atoms/Button'
-import { CardArticle } from '../atoms/CardArticle'
-import { CardArticleFirst } from '../atoms/CardArticleFirst'
+import Pagination from "@mui/material/Pagination";
+import { useRouter } from 'next/router';
+import { useState } from "react";
+import { CardArticle } from '../atoms/CardArticle';
+import { CardArticleFirst } from '../atoms/CardArticleFirst';
+
 
 type props = {
      data1: {
@@ -21,10 +23,18 @@ type props = {
                }
           }[]
      }
+     totalPages: number | undefined
 }
 
-export const ArticleSection = ({ data1, data2 }: props) => {
+export const ArticleSection = ({ data1, data2, totalPages }: props) => {
      const router = useRouter()
+     const [data, setData] = useState([data2])
+     const [currentPage, setCurrentPage] = useState(Number(router.query.page) || 1)
+
+     const handleChange = (e: React.ChangeEvent<unknown>, page: number) => {
+          setCurrentPage(page)
+          router.push(`/blogs?page=${page}`)
+     }
 
      return (
           <div className=''>
@@ -52,14 +62,13 @@ export const ArticleSection = ({ data1, data2 }: props) => {
                               </div>
                          ))}
                     </div>
-                    <Button
-                         action={(e) => {
-                              const currentPage = Number(router.query.page) || 1
-                              router.push(`/blogs?page=${currentPage + 1}`)
-                         }}
-                         title='Muat Lebih Banyak'
-                         buttonColor='mt-10 mx-auto hover:bg-[#F07167] hover:text-white'
-                    />
+                    <div className='flex justify-center'>
+                         <Pagination
+                              count={totalPages}
+                              page={currentPage}
+                              onChange={handleChange}
+                         />
+                    </div>
                </div>
           </div>
      )

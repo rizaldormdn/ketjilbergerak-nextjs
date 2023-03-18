@@ -19,15 +19,15 @@ export const Slider = () => {
                }}
           >
                <div className='bg-slate-700'>
-                    <SwiperSlide><Image className='w-[150px] h-[100px] bg-orange-500 rounded-xl p-2' src={sa} height={50} width={200} alt='' /></SwiperSlide>
-                    <SwiperSlide><Image className='w-[150px] h-[100px] bg-orange-500 rounded-xl p-2' src={sb} height={50} width={200} alt='' /></SwiperSlide>
-                    <SwiperSlide><Image className='w-[150px] h-[100px] bg-orange-500 rounded-xl p-2' src={sc} height={50} width={200} alt='' /></SwiperSlide>
-                    <SwiperSlide><Image className='w-[150px] h-[100px] bg-orange-500 rounded-xl p-2' src={sd} height={50} width={200} alt='' /></SwiperSlide>
-                    <SwiperSlide><Image className='w-[150px] h-[100px] bg-orange-500 rounded-xl p-2' src={sa} height={50} width={200} alt='' /></SwiperSlide>
-                    <SwiperSlide><Image className='w-[150px] h-[100px] bg-orange-500 rounded-xl p-2' src={sb} height={50} width={200} alt='' /></SwiperSlide>
-                    <SwiperSlide><Image className='w-[150px] h-[100px] bg-orange-500 rounded-xl p-2' src={sc} height={50} width={200} alt='' /></SwiperSlide>
-                    <SwiperSlide><Image className='w-[150px] h-[100px] bg-orange-500 rounded-xl p-2' src={sd} height={50} width={200} alt='' /></SwiperSlide>
-                    <SwiperSlide><Image className='w-[150px] h-[100px] bg-orange-500 rounded-xl p-2' src={sa} height={50} width={200} alt='' /></SwiperSlide>
+                    <SwiperSlide><Image className='w-[170px] h-[100px] bg-orange-500 rounded-xl p-2' src={sa} height={50} width={200} alt='' /></SwiperSlide>
+                    <SwiperSlide><Image className='w-[170px] h-[100px] bg-orange-500 rounded-xl p-2' src={sb} height={50} width={200} alt='' /></SwiperSlide>
+                    <SwiperSlide><Image className='w-[170px] h-[100px] bg-orange-500 rounded-xl p-2' src={sc} height={50} width={200} alt='' /></SwiperSlide>
+                    <SwiperSlide><Image className='w-[170px] h-[100px] bg-orange-500 rounded-xl p-2' src={sd} height={50} width={200} alt='' /></SwiperSlide>
+                    <SwiperSlide><Image className='w-[170px] h-[100px] bg-orange-500 rounded-xl p-2' src={sa} height={50} width={200} alt='' /></SwiperSlide>
+                    <SwiperSlide><Image className='w-[170px] h-[100px] bg-orange-500 rounded-xl p-2' src={sb} height={50} width={200} alt='' /></SwiperSlide>
+                    <SwiperSlide><Image className='w-[170px] h-[100px] bg-orange-500 rounded-xl p-2' src={sc} height={50} width={200} alt='' /></SwiperSlide>
+                    <SwiperSlide><Image className='w-[170px] h-[100px] bg-orange-500 rounded-xl p-2' src={sd} height={50} width={200} alt='' /></SwiperSlide>
+                    <SwiperSlide><Image className='w-[170px] h-[100px] bg-orange-500 rounded-xl p-2' src={sa} height={50} width={200} alt='' /></SwiperSlide>
                </div>
           </Swiper>
      )

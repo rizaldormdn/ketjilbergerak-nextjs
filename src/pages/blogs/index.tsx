@@ -24,15 +24,20 @@ type Props = {
                }
           }[]
      }
+     totalPages: number | undefined
 }
 
-const Index = ({ data1, data2 }: Props) => {
+const Index = ({ data1, data2, totalPages }: Props) => {
 
      return (
           <BlankTemplate>
                <CommonSEO title='blog' description='page blog' />
                <PrimaryNavigation />
-               <ArticleSection data1={data1} data2={data2} />
+               <ArticleSection
+                    data1={data1}
+                    data2={data2}
+                    totalPages={totalPages}
+               />
                <Footer />
           </BlankTemplate>
      )
@@ -40,16 +45,31 @@ const Index = ({ data1, data2 }: Props) => {
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({ query }) => {
      const page = query.page ? parseInt(query.page as string) : 1
-     const [res1, res2] = await Promise.all([
-          axios.get('http://localhost:8080/v1/featured-articles'),
-          axios.get(`http://localhost:8080/v1/articles?page=${page}`)
-     ])
 
-     return {
-          props: {
-               data1: res1.data.data,
-               data2: res2.data.data
+     try {
+          const response1 = await axios.get('http://localhost:8080/v1/featured-articles')
+          const response2 = await axios.get(`http://localhost:8080/v1/articles?page=${page}`)
+
+          const [res1, res2] = await axios.all([response1, response2])
+
+          const totalPages = res2.data.data.paging.pages
+
+          return {
+               props: {
+                    data1: res1.data.data,
+                    data2: res2.data.data,
+                    totalPages: totalPages
+               }
+          }
+     } catch (error) {
+          return {
+               props: {
+                    data1: [],
+                    data2: { articles: [] },
+                    totalPages: 0
+               }
           }
      }
+
 }
 export default Index

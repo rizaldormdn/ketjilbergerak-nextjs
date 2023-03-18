@@ -10,6 +10,7 @@ import React, { useState } from "react";
 
 type Props = {
      programs: Program[]
+     totalPages: number
 }
 type Program = {
      image_thumbnail_url: string,
@@ -17,7 +18,7 @@ type Program = {
      title: string,
      excerpt: string
 }
-const Index = ({ programs }: Props) => {
+const Index = ({ programs, totalPages }: Props) => {
      const router = useRouter()
 
      const [data, setData] = useState([...programs])
@@ -31,14 +32,14 @@ const Index = ({ programs }: Props) => {
      return (
           <ProgramTemplate>
                <CommonSEO title="Program" description="" />
-               <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.9 }}
-               >
-                    {programs.map((v, index) => (
-                         <div key={v.slug}>
+               {programs.map((v, index) => (
+                    <div key={v.slug}>
+                         <motion.div
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              exit={{ opacity: 0 }}
+                              transition={{ duration: 0.5 }}
+                         >
                               <ProgramSection
                                    slug={v.slug}
                                    image_thumbnail_url={v.image_thumbnail_url}
@@ -46,17 +47,17 @@ const Index = ({ programs }: Props) => {
                                    excerpt={v.excerpt}
                                    index={index}
                               />
-                         </div>
-                    ))}
-                    <div className='flex justify-center'>
-                         <Pagination
-                              count={data.length}
-                              page={currentPage}
-                              onChange={handleChange}
-                         />
+                         </motion.div>
                     </div>
-               </motion.div>
-          </ProgramTemplate>
+               ))}
+               <div className='flex justify-center'>
+                    <Pagination
+                         count={totalPages}
+                         page={currentPage}
+                         onChange={handleChange}
+                    />
+               </div>
+          </ProgramTemplate >
      )
 };
 
@@ -64,10 +65,12 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
      const page = context.query.page ? parseInt(context.query.page as string) : 1
      const response = await axios.get(`http://localhost:8080/v1/program?page=${page}`,)
      const programs = await response.data.data.program
+     const totalPages = await response.data.paging.pages
 
      return {
           props: {
-               programs
+               programs,
+               totalPages
           }
      }
 }
