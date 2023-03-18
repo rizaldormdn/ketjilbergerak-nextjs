@@ -34,6 +34,7 @@ export const ProgramSection = ({ slug, image_thumbnail_url, title, excerpt, inde
                     ))}
                     <Button title="Muat Lebih Banyak" style="mb-5" buttonColor="mx-auto mt-5 hover:bg-[#F07167] hover:text-white" action={(e) => { }} />
                 </div>
+                
             </div>
         </>
     )
