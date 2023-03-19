@@ -1,6 +1,6 @@
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useRouter } from 'next/router';
-import Button from "./Button";
+import Button from "../atoms/Button";
 
 const Map = () => {
      const router = useRouter()

@@ -2,7 +2,7 @@ import mail from '@/pages/api/mail'
 import axios from 'axios'
 import React, { useState } from 'react'
 import Button from '../atoms/Button'
-import { InputField, TextArea } from '../atoms/InputField'
+import { InputField, TextArea } from './InputField'
 
 
 const FormContact = () => {

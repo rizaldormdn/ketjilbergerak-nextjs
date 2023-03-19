@@ -1,8 +1,8 @@
-import MediaSosial from '@/components/atoms/MediaSosial'
+import MediaSosial from '@/components/molecules/MediaSosial'
 import FormContact from '@/components/molecules/FormContact'
 import Image from 'next/image'
 import kb1 from '../../assets/images/KB1.png'
-import Map from '../atoms/Map'
+import Map from '../molecules/Map'
 
 
 const Contact = () => {
@@ -10,7 +10,7 @@ const Contact = () => {
           <>
                <div className='flex items-center flex-wrap justify-between md:mt-10'>
                     <div>
-                         <Image src={kb1} width={650} height={1104} alt='' />
+                         <Image src={kb1} width={500} height={1104} alt='' />
                     </div>
                     <div className='md:px-0 px-2 mt-10'>
                          <h1 className=' font-bold text-5xl text-[#F07167]'>Get in touch today</h1>

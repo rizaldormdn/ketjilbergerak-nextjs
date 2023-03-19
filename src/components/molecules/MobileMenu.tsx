@@ -6,7 +6,7 @@ export const MobileNavigation = () => {
   const [menu, setMenu] = useState<boolean>(false)
   return (
     <>
-      <div>
+      <div className=''>
         <DehazeIcon fontSize='large' className='md:hidden' onClick={() => { setMenu(!menu) }} />
       </div>
       {menu && (

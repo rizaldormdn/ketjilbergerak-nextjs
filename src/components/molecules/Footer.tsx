@@ -1,7 +1,7 @@
 import Button from "../atoms/Button";
 import { Logo } from "../atoms/Logo";
-import { LinkFooter } from "../atoms/Link";
-import MediaSosial from "../atoms/MediaSosial";
+import { LinkFooter } from "./Link";
+import MediaSosial from "./MediaSosial";
 import salt from '../../assets/images/salt.png'
 import Image from "next/image";
 
