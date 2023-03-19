@@ -1,5 +1,5 @@
-import CardContent from '@/components/atoms/CardContent'
-import MediaSosial from '@/components/atoms/MediaSosial'
+import CardContent from '@/components/molecules/CardContent'
+import MediaSosial from '@/components/molecules/MediaSosial'
 import Footer from '@/components/molecules/Footer'
 import PrimaryNavigation from '@/components/molecules/PrimaryNavigation'
 import BlankTemplate from '@/components/templates/BlankTemplate'

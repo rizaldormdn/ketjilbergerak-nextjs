@@ -2,7 +2,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from 'react';
 import Button from "../atoms/Button";
-import CardContent from "../atoms/CardContent";
+import CardContent from "./CardContent";
 
 type props = {
   title: string;

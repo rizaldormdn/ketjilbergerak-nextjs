@@ -1,4 +1,4 @@
-import UserCard from "@/components/atoms/UserCard";
+import UserCard from "@/components/molecules/UserCard";
 import BlankTemplate from "@/components/templates/BlankTemplate";
 import axios from "axios";
 import { GetServerSideProps } from "next";

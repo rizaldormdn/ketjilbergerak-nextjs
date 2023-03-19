@@ -1,4 +1,4 @@
-import { ArticleSection } from '@/components/molecules/ArticleSection'
+import { ArticleSection } from '@/components/organism/ArticleSection'
 import Footer from '@/components/molecules/Footer'
 import PrimaryNavigation from '@/components/molecules/PrimaryNavigation'
 import { CommonSEO } from '@/components/SEO'

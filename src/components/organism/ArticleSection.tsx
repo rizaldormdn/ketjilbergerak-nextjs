@@ -1,8 +1,8 @@
 import Pagination from "@mui/material/Pagination";
 import { useRouter } from 'next/router';
 import { useState } from "react";
-import { CardArticle } from '../atoms/CardArticle';
-import { CardArticleFirst } from '../atoms/CardArticleFirst';
+import { CardArticle } from '../molecules/CardArticle';
+import { CardArticleFirst } from '../molecules/CardArticleFirst';
 
 
 type props = {
@@ -62,7 +62,7 @@ export const ArticleSection = ({ data1, data2, totalPages }: props) => {
                               </div>
                          ))}
                     </div>
-                    <div className='flex justify-center'>
+                    <div className='flex justify-center mt-10'>
                          <Pagination
                               count={totalPages}
                               page={currentPage}

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import Button from './Button'
+import Button from '../atoms/Button'
 
 type props = {
      slug: string

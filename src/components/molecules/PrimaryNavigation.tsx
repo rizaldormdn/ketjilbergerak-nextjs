@@ -5,11 +5,11 @@ import { MobileNavigation } from "./MobileMenu";
 const PrimaryNavigation = () => {
 
 	return (
-		<nav className="md:py-8 py-4 flex mx-auto justify-between items-center md:max-w-7xl">
-			<div className="md:px-1 md:ml-10 px-3">
+		<nav className="md:py-8 py-4 flex mx-auto justify-between items-center">
+			<div className="md:px-1 px-2">
 				<Logo />
 			</div>
-			<div className="px-4">
+			<div className="px-2">
 				<ul className="hidden md:flex space-x-6">
 					<Link className="block hyperlink hovers" href="/">Home</Link>
 					<Link className="block hyperlink hovers" href="/program">Program</Link>

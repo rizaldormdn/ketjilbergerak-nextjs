@@ -13,17 +13,9 @@ const index = () => {
 		<BlankTemplate>
 			<CommonSEO title="Home" description="Description of Create Next Page by Russ" />
 			<PrimaryNavigation />
-			<AnimatePresence>
-				<motion.div
-					initial={{ opacity: 0, y: 30 }}
-					animate={{ opacity: 1, x: 0 }}
-					transition={{ delay: 0.5 }}
-				>
-					<FirstSectionField />
-					<ThirdSection />
-					<Instagram />
-				</motion.div>
-			</AnimatePresence>
+			<FirstSectionField />
+			<ThirdSection />
+			<Instagram />
 			<Footer />
 		</BlankTemplate>
 	);
