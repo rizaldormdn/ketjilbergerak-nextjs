@@ -5,6 +5,7 @@ import { CommonSEO } from '@/components/SEO'
 import BlankTemplate from '@/components/templates/BlankTemplate'
 import axios from 'axios'
 import { GetServerSideProps } from 'next'
+import { useEffect, useState } from 'react'
 
 type Props = {
      data1: {
@@ -27,7 +28,28 @@ type Props = {
      totalPages: number | undefined
 }
 
+type article = {
+     id: number
+     title: string
+     content: string
+}
+
 const Index = ({ data1, data2, totalPages }: Props) => {
+
+     const [article, setArticle] = useState<article[]>([])
+
+     const get = async () => {
+          await axios.get('http://localhost:1337/api/articles', {
+               title: article
+          })
+               .then((res) => {
+                    console.log(res.data.data);
+                    setArticle(res.data.data)
+               })
+     }
+     useEffect(() => {
+          get()
+     }, [])
 
      return (
           <BlankTemplate>
@@ -38,6 +60,15 @@ const Index = ({ data1, data2, totalPages }: Props) => {
                     data2={data2}
                     totalPages={totalPages}
                />
+               <div>
+                    {article.map((v) => (
+                         <div key={v.id}>
+                              <p>{v.title}</p>
+                              <p>{ }</p>
+                              <p></p>
+                         </div>
+                    ))}
+               </div>
                <Footer />
           </BlankTemplate>
      )
@@ -51,7 +82,6 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ query }) =
           const response2 = await axios.get(`http://localhost:8080/v1/articles?page=${page}`)
 
           const [res1, res2] = await axios.all([response1, response2])
-
           const totalPages = res2.data.data.paging.pages
 
           return {

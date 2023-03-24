@@ -38,7 +38,11 @@ const ThirdSection = () => {
             <div className="flex md:justify-between justify-evenly flex-wrap md:gap-10 gap-5 mt-14">
               {featured.map((v) => (
                 <div key={v.title} className="cursor-pointer" onClick={() => router.push(`program/${v.slug}`)}>
-                  <CardContent title={v.title} excerpt={v.excerpt} image_thumbnail_url={v.image_thumbnail_url} />
+                  <CardContent
+                    title={v.title}
+                    excerpt={v.excerpt}
+                    image_thumbnail_url={v.image_thumbnail_url}
+                  />
                 </div>
               ))}
             </div>

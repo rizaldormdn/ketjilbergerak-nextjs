@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import logo2 from '../../assets/images/2_logo Kemendesa.png';
 import img from '../../assets/images/Image.png';
-import Button from "../atoms/Button";
+import { FormAbout } from "./FormAbout";
 import { Slider } from "./Slider";
 import UserCard from "./UserCard";
 export const AboutSection = () => {
@@ -64,7 +64,15 @@ export const AboutSection = () => {
                         <Slider />
                     </div>
                 </div>
-                <div className="mt-20">
+                <div className="flex justify-between items-center mt-10 bg-gray-100 md:p-4 p-2 rounded flex-wrap">
+                    <div className="md:w-6/12">
+                        <h1 className="md:text-6xl text-4xl md:mb-0 mb-10 font-bold">Bantu Komunitas Kami Menyalurkan Kebaikan Terhadap Sesama</h1>
+                    </div>
+                    <div>
+                        <FormAbout />
+                    </div>
+                </div>
+                <div className="mt-10">
                     <h2 className="font-bold text-4xl md:p-0 p-2">Tim Ketjil Bergerak</h2>
                     <div className="flex md:justify-between justify-center items-center flex-wrap">
                         {tim.map((list) => (

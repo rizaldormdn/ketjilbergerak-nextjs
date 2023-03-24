@@ -55,6 +55,7 @@ export const ArticleSection = ({ data1, data2, totalPages }: props) => {
                          {data2.articles && data2.articles.length > 1 && data2.articles.map((v2) => (
                               <div key={v2.slug} onClick={() => router.push(`blogs/${v2.slug}`)}>
                                    <CardArticle
+                                        image_thumbnail_url={v2.image_thumbnail_url}
                                         title={v2.title}
                                         excerpt={v2.excerpt}
                                         date={new Date(v2.date.created_at).toLocaleDateString('id-ID')}

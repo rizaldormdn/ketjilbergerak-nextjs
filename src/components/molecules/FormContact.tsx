@@ -29,7 +29,7 @@ const FormContact = () => {
         }
       })
       console.log(res.data);
-      
+
     } catch (error) {
       console.log(error);
 
@@ -42,6 +42,7 @@ const FormContact = () => {
       <form onSubmit={handleSubmit}>
         <div className='flex'>
           <InputField
+            style='rounded-3xl px-4'
             name='name'
             type='text'
             value={data.name}
@@ -50,6 +51,7 @@ const FormContact = () => {
             placeHolder={'Jhon Doe'}
           />
           <InputField
+            style='rounded-3xl px-4'
             name='email'
             type='text'
             value={data.email}
@@ -60,6 +62,7 @@ const FormContact = () => {
         </div>
         <div className='flex'>
           <InputField
+            style='rounded-3xl px-4'
             name='phone'
             type='number'
             value={data.phone}
@@ -68,6 +71,7 @@ const FormContact = () => {
             placeHolder={'081223456712'}
           />
           <InputField
+            style='rounded-3xl px-4'
             name='company'
             type='text'
             value={data.company}

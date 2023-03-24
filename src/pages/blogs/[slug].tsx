@@ -32,6 +32,10 @@ type Article = {
     name: string
     email: string
   }
+  date: {
+    created_at: string
+    updated_at: string
+}
 }
 type Props = {
   articles: Article
@@ -47,20 +51,14 @@ const DetailArticle = ({ articles, relatedArticles }: Props) => {
       <PrimaryNavigation />
       <div className="p-4 mb-20">
         <div className="flex gap-3 text-sm">
-          <div className="flex gap-2 items-center text-cyan-700">
-            <p className="text-xs md:text-base">Pusat Edukasi</p>
-            <ArrowForwardIosIcon
-              className="text-sm"
-            />
-          </div>
-          <div className="flex items-center gap-2 text-cyan-700">
-            <p className="text-xs md:text-base">Article Ilmiah</p>
+          <div className="flex gap-2 items-center text-[#F07167]">
+            <p className="text-xs md:text-base">Article</p>
             <ArrowForwardIosIcon
               className="text-sm"
             />
           </div>
           <div>
-            <p className="text-xs md:text-base">Sekolah Pemuda Desa</p>
+            <p className="text-xs md:text-base">{articles.title}</p>
           </div>
         </div>
         <div>
@@ -68,7 +66,7 @@ const DetailArticle = ({ articles, relatedArticles }: Props) => {
             <h1 className="text-3xl md:text-4xl">{articles.title}</h1>
             <div className="flex items-center mt-2 text-xs">
               <CalendarMonthIcon />
-              <p className="px-2">31 january 2030</p>
+              <p className="px-2">{new Date(articles.date.created_at).toLocaleString("id-ID")}</p>
             </div>
           </div>
           <div className="flex flex-col items-center">
@@ -101,7 +99,8 @@ const DetailArticle = ({ articles, relatedArticles }: Props) => {
             {relatedArticles?.length > 0 && relatedArticles.map((v1) => (
               <div
                 key={v1.slug}
-                className="md:flex flex items-center justify-center gap-5 md:justify-between flex-wrap md:gap-5"
+                className=""
+                onClick={() => router.push(`/articles${v1.slug}`)}
               >
                 <CardContent
                   image_thumbnail_url={v1.image_thumbnail_url}

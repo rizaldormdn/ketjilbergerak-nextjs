@@ -9,7 +9,7 @@ type props = {
 const CardContent = (props: props) => {
   return (
     <>
-      <div className="relative bg-opacity-100 hover:scale-110 duration-300">
+      <div className="relative bg-opacity-100 hover:scale-110 duration-700 hover:bg-gradient-to-r from-gray-700 to-black rounded-xl">
         <Image className="rounded-xl opacity-80 lg:w-[280px]" src={props.image_thumbnail_url} width={300} height={225} alt='' />
         <div className="absolute inset-0 flex flex-col justify-end p-4">
           <h1 className="text-[#F07167]">{props.title}</h1>

@@ -1,3 +1,4 @@
+import { FormAbout } from "@/components/molecules/FormAbout";
 import { ProgramSection } from "@/components/molecules/ProgramSection";
 import { CommonSEO } from "@/components/SEO";
 import { ProgramTemplate } from "@/components/templates/ProgramTemplate";
@@ -50,6 +51,10 @@ const Index = ({ programs, totalPages }: Props) => {
                          </motion.div>
                     </div>
                ))}
+               <div className="flex justify-between mb-10 bg-gray-100 p-2 flex-wrap">
+                    <h1 className="text-4xl md:w-5/12">Dukung Program Rutin Kami</h1>
+                    <FormAbout />
+               </div>
                <div className='flex justify-center'>
                     <Pagination
                          count={totalPages}
