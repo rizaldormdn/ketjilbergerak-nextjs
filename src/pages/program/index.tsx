@@ -2,62 +2,48 @@ import { FormAbout } from "@/components/molecules/FormAbout";
 import { ProgramSection } from "@/components/molecules/ProgramSection";
 import { CommonSEO } from "@/components/SEO";
 import { ProgramTemplate } from "@/components/templates/ProgramTemplate";
-import Pagination from "@mui/material/Pagination";
-import axios from "axios";
-import { motion } from 'framer-motion';
+import { MetaPagination } from "@/types/MetaPaginationType";
+import { ProgramType } from "@/types/ProgramType";
+import { Adapter } from "@/utils/api";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import { useState } from 'react'
+import Pagination from "@mui/material/Pagination";
 
 type Props = {
-     programs: Program[]
-     totalPages: number
+     programs: ProgramType[]
+     meta: MetaPagination
 }
-type Program = {
-     image_thumbnail_url: string,
-     slug: string,
-     title: string,
-     excerpt: string
-}
-const Index = ({ programs, totalPages }: Props) => {
+const Index = ({ programs, meta }: Props) => {
      const router = useRouter()
-
-     const [data, setData] = useState([...programs])
      const [currentPage, setCurrentPage] = useState(Number(router.query.page) || 1)
 
-     const handleChange = (e: React.ChangeEvent<unknown>, page: number) => {
-          setCurrentPage(page)
-          router.push(`/program?page=${page}`)
+     const handleChange = (e: React.ChangeEvent<unknown>, value: number) => {
+          setCurrentPage(value)
+          router.push(`/program?page=${value}`)
      }
-
      return (
           <ProgramTemplate>
                <CommonSEO title="Program" description="" />
-               {programs.map((v, index) => (
-                    <div key={v.slug}>
-                         <motion.div
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: 1 }}
-                              exit={{ opacity: 0 }}
-                              transition={{ duration: 0.5 }}
-                         >
-                              <ProgramSection
-                                   slug={v.slug}
-                                   image_thumbnail_url={v.image_thumbnail_url}
-                                   title={v.title}
-                                   excerpt={v.excerpt}
-                                   index={index}
-                              />
-                         </motion.div>
-                    </div>
+               {programs.map((program, index) => (
+                    <ProgramSection
+                         key={program.id}
+                         id={program.id}
+                         slug={program.attributes.slug}
+                         image_thumbnail_url={"http://127.0.0.1:1337" + program.attributes.images.data.attributes.url}
+                         title={program.attributes.title}
+                         excerpt={program.attributes.excerpt}
+                         index={index}
+                    />
                ))}
+
                <div className="flex justify-between mb-10 bg-gray-100 p-2 flex-wrap">
                     <h1 className="text-4xl md:w-5/12">Dukung Program Rutin Kami</h1>
                     <FormAbout />
                </div>
                <div className='flex justify-center'>
                     <Pagination
-                         count={totalPages}
+                         count={meta.pagination.pageCount}
                          page={currentPage}
                          onChange={handleChange}
                     />
@@ -66,16 +52,15 @@ const Index = ({ programs, totalPages }: Props) => {
      )
 };
 
-export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
-     const page = context.query.page ? parseInt(context.query.page as string) : 1
-     const response = await axios.get(`http://localhost:8080/v1/program?page=${page}`,)
-     const programs = await response.data.data.program
-     const totalPages = await response.data.paging.pages
+export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
+     const page = Number(ctx.query.page) || 1
+     const pageSize = 5
+     const res = await Adapter.get(`/api/programs?populate=*&pagination[page]=${page}&pagination[pageSize]=${pageSize}`)
 
      return {
           props: {
-               programs,
-               totalPages
+               programs: res.data.data,
+               meta: res.data.meta
           }
      }
 }

@@ -1,56 +1,21 @@
-import { ArticleSection } from '@/components/organism/ArticleSection'
 import Footer from '@/components/molecules/Footer'
 import PrimaryNavigation from '@/components/molecules/PrimaryNavigation'
+import { ArticleSection } from '@/components/organism/ArticleSection'
 import { CommonSEO } from '@/components/SEO'
 import BlankTemplate from '@/components/templates/BlankTemplate'
+import { ArticleType } from '@/types/ArticleType'
+import { MetaPagination } from '@/types/MetaPaginationType'
+import { Adapter } from '@/utils/api'
 import axios from 'axios'
 import { GetServerSideProps } from 'next'
-import { useEffect, useState } from 'react'
 
 type Props = {
-     data1: {
-          slug: string
-          title: string,
-          excerpt: string,
-          image_thumbnail_url: string,
-     }[]
-     data2: {
-          articles: {
-               title: string,
-               excerpt: string,
-               image_thumbnail_url: string,
-               slug: string
-               date: {
-                    created_at: string
-               }
-          }[]
-     }
-     totalPages: number | undefined
+     data1: ArticleType[]
+     data2: ArticleType[]
+     meta: MetaPagination
 }
 
-type article = {
-     id: number
-     title: string
-     content: string
-}
-
-const Index = ({ data1, data2, totalPages }: Props) => {
-
-     const [article, setArticle] = useState<article[]>([])
-
-     const get = async () => {
-          await axios.get('http://localhost:1337/api/articles', {
-               title: article
-          })
-               .then((res) => {
-                    console.log(res.data.data);
-                    setArticle(res.data.data)
-               })
-     }
-     useEffect(() => {
-          get()
-     }, [])
-
+const Index = ({ data1, data2, meta }: Props) => {
      return (
           <BlankTemplate>
                <CommonSEO title='blog' description='page blog' />
@@ -58,48 +23,26 @@ const Index = ({ data1, data2, totalPages }: Props) => {
                <ArticleSection
                     data1={data1}
                     data2={data2}
-                    totalPages={totalPages}
+                    meta={meta}
                />
-               <div>
-                    {article.map((v) => (
-                         <div key={v.id}>
-                              <p>{v.title}</p>
-                              <p>{ }</p>
-                              <p></p>
-                         </div>
-                    ))}
-               </div>
                <Footer />
           </BlankTemplate>
      )
 };
 
-export const getServerSideProps: GetServerSideProps<Props> = async ({ query }) => {
-     const page = query.page ? parseInt(query.page as string) : 1
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+     const page = Number(ctx.query.page) || 1
+     const pageSize = 1
+     const response1 = await Adapter.get('/api/articles?populate=*&filters[featured][$eq]=true&pagination[pageSize]=1')
+     const response2 = await Adapter.get(`/api/articles?populate=*&pagination[page]=${page}&pagination[pageSize]=${pageSize}`)
+     const [res1, res2] = await axios.all([response1, response2])
 
-     try {
-          const response1 = await axios.get('http://localhost:8080/v1/featured-articles')
-          const response2 = await axios.get(`http://localhost:8080/v1/articles?page=${page}`)
-
-          const [res1, res2] = await axios.all([response1, response2])
-          const totalPages = res2.data.data.paging.pages
-
-          return {
-               props: {
-                    data1: res1.data.data,
-                    data2: res2.data.data,
-                    totalPages: totalPages
-               }
-          }
-     } catch (error) {
-          return {
-               props: {
-                    data1: [],
-                    data2: { articles: [] },
-                    totalPages: 0
-               }
+     return {
+          props: {
+               data1: res1.data.data,
+               data2: res2.data.data,
+               meta: res2.data.meta
           }
      }
-
 }
 export default Index

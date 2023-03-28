@@ -1,31 +1,15 @@
-import axios from "axios";
+import { ProgramType } from "@/types/ProgramType";
 import { useRouter } from "next/router";
-import { useEffect, useState } from 'react';
 import Button from "../atoms/Button";
 import CardContent from "./CardContent";
 
-type props = {
-  title: string;
-  excerpt: string;
-  image_thumbnail_url: string
-  slug: string
+type Props = {
+  programs: ProgramType[]
 };
 
-const ThirdSection = () => {
+const ThirdSection = ({ programs }: Props) => {
   const router = useRouter()
 
-  const [featured, setFeatured] = useState<props[]>([])
-  const getFeaturedArticle = async () => {
-    try {
-      const response = await axios.get('http://localhost:8080/v1/featured-program')
-      setFeatured(response.data.data)
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  useEffect(() => {
-    getFeaturedArticle()
-  }, [])
   return (
     <>
       <div className=" w-full flex items-center justify-between p-6">
@@ -36,12 +20,12 @@ const ThirdSection = () => {
               <p className="text-black">Program unggulan untuk mencapai misi kami.</p>
             </div>
             <div className="flex md:justify-between justify-evenly flex-wrap md:gap-10 gap-5 mt-14">
-              {featured.map((v) => (
-                <div key={v.title} className="cursor-pointer" onClick={() => router.push(`program/${v.slug}`)}>
+              {programs.map((program) => (
+                <div key={program.attributes.title} className="cursor-pointer" onClick={() => router.push(`program/${program.attributes.slug}`)}>
                   <CardContent
-                    title={v.title}
-                    excerpt={v.excerpt}
-                    image_thumbnail_url={v.image_thumbnail_url}
+                    title={program.attributes.title}
+                    excerpt={program.attributes.excerpt}
+                    image_thumbnail_url={"http://127.0.0.1:1337" + program.attributes.images.data.attributes.url}
                   />
                 </div>
               ))}
